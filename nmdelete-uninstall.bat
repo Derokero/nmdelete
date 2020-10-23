@@ -11,7 +11,7 @@ IF NOT EXIST %file% (
 	ECHO %cmd% is not installed!
 ) ELSE (
 	DEL %file% /p 
-	SLEEP 1
+	TIMEOUT /T 1 /NOBREAK
 	IF NOT EXIST %file% (
 		ECHO Sucessfully uninstalled!
 	) ELSE (
@@ -19,4 +19,4 @@ IF NOT EXIST %file% (
 	)
 )
 
-SLEEP 3
+TIMEOUT /T 3 /NOBREAK

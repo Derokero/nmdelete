@@ -38,7 +38,7 @@ IF NOT EXIST %cmd%.bat (
 	ECHO IF %%count%% GTR 0 ^(ECHO Successfully removed %%count%% node_modules!^) ELSE ^( ECHO no node_modules folders found! ^)>> %file%
 
 
-	SLEEP 2
+	TIMEOUT /T 2 /NOBREAK
 	
 	IF NOT EXIST %cmd%.bat ( 
 		GOTO failed 
@@ -49,16 +49,16 @@ IF NOT EXIST %cmd%.bat (
 ) ELSE (
 	ECHO %cmd% is already installed!
 	ECHO If you want to uninstall it, run nmdelete-uninstall
-	SLEEP 4
+	TIMEOUT /T 4 /NOBREAK
 	EXIT
 )
 
 :failed
 	ECHO Failed to install, try running with administrative privileges!
-	SLEEP 4
+	TIMEOUT /T 4 /NOBREAK
 	EXIT
 	
 :success
 	ECHO Successfully installed! Enjoy :^)
-	SLEEP 4
+	TIMEOUT /T 4 /NOBREAK
 	EXIT
